@@ -1,5 +1,10 @@
+import 'package:bloc/bloc.dart';
 import 'package:flutter/material.dart';
 
-void main() => runApp(MaterialApp(
-  home: Scaffold(),
-));
+import 'app.dart';
+import 'counter_observer.dart';
+
+void main() {
+  Bloc.observer = CounterObserver(); // track or observe all state has change
+  runApp(const CounterApp());
+}
